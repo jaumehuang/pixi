@@ -1,54 +1,20 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-03 14:53:11
+ * @LastEditTime: 2020-10-07 23:01:54
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /pixi/index.html
+-->
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>pixi</title>
-    <script src="http://miyuan-static.oss-cn-shenzhen.aliyuncs.com/zhitu-api/1601463498211857.js"></script>
   </head>
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
-    <script>
-
-//Create a Pixi Application
-let app = new PIXI.Application({ 
-    width: 256, 
-    height: 256,                       
-    antialiasing: true, 
-    transparent: false, 
-    resolution: 1
-  }
-);
-
-//Add the canvas that Pixi automatically created for you to the HTML document
-document.body.appendChild(app.view);
-
-//load an image and run the `setup` function when it's done
-PIXI.loader
-  .add("src/images/cat.png")
-  .load(setup);
-
-//This `setup` function will run when the image has loaded
-function setup() {
-
-  //Create the cat sprite
-  let cat = new PIXI.Sprite(PIXI.loader.resources["src/images/cat.png"].texture);
-  
-  //You can also create the `cat` sprite from the texture, like this:
-  //let cat = new PIXI.Sprite(PIXI.TextureCache["images/cat.png"]);
-
-  //Add the cat to the stage
-  app.stage.addChild(cat);
-
-  //If you ever need to, here's how you can clean out WebGL's GPU
-  //memory manually
-  /*
-  Object.keys(TextureCache).forEach(function(texture) {
-    TextureCache[texture].destroy(true);
-  });
-  */
-}
-</script>
   </body>
 </html>
